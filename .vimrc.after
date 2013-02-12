@@ -1,0 +1,50 @@
+set nocompatible
+
+syntax enable
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
+
+let mapleader=","
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set history=1000                "Store lots of :cmdline history
+set showcmd                     "Show incomplete cmds down the bottom
+set showmode                    "Show current mode down the bottom
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
+set mouse=a
+set noswapfile
+set nobackup
+set pastetoggle=<F2>
+set nowrap                      "Don't wrap lines
+set linebreak                   "Wrap lines at convenient points
+set shiftround                  " When at 3 spaces and I hit >>, go to 4, not 5.
+" Don't add the comment prefix when I hit enter or o/O on a comment line.
+set formatoptions-=or
+
+"copy to system clipboard hack
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
+
+map <C-h> :nohl<cr>
+
+" ================ Scrolling ========================
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+match ErrorMsg '\s\+$'          "http://www.bestofvim.com/tip/trailing-whitespace/
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>   "^^^^^^
+
+"""""""""""" plugins
+" Fugitive {
+        nnoremap <silent> <leader>gs :Gstatus<CR>
+        nnoremap <silent> <leader>gd :Gdiff<CR>
+        nnoremap <silent> <leader>gc :Gcommit<CR>
+        nnoremap <silent> <leader>gb :Gblame<CR>
+        nnoremap <silent> <leader>gl :Glog<CR>
+        nnoremap <silent> <leader>gp :Git push<CR>
+     "}

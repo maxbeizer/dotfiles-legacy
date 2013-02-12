@@ -1,0 +1,40 @@
+[user]
+  me = maxbeizer
+  email = max.beizer@gmail.com
+[diff]
+  tool = vimdiff
+[color]
+  diff = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  editor = vim
+	excludesfile = /Users/maxbeizer/.gitignore
+[alias]
+  st = status
+  sts = status -s
+  stb = status -sb
+  ci = commit
+  co = checkout
+  cob = checkout -b
+  ap = add -p
+  w = whatchanged
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  amend = commit --amend -C HEAD
+  undo = reset --soft HEAD^
+  count = shortlog -sn
+  mg = merge --no-ff --log
+  sp = smart-pull
+  sm = smart-merge
+  au = add --update
+[help]
+  autocorrect = 1
+[push]
+	default = matching
