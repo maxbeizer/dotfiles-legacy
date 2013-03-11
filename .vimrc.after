@@ -2,6 +2,8 @@ set nocompatible
 
 syntax enable
 set background=dark
+nnoremap <silent> <F9> :exec "color " .
+    \ ((g:colors_name == "twilight") ? "solarized" : "twilight")<CR>
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
@@ -9,6 +11,7 @@ let g:solarized_visibility="high"
 colorscheme solarized
 
 let mapleader=","
+set gfn=Monaco:h12
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
