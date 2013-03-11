@@ -11,6 +11,7 @@ let g:solarized_visibility="high"
 colorscheme solarized
 
 let mapleader=","
+let NERDTreeShowHidden=0        "Show dot files in nerdtree automatically
 set gfn=Monaco:h12
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -23,10 +24,15 @@ set noswapfile
 set nobackup
 set pastetoggle=<F2>
 set nowrap                      "Don't wrap lines
-set linebreak                   "Wrap lines at convenient points
-set shiftround                  " When at 3 spaces and I hit >>, go to 4, not 5.
-" Don't add the comment prefix when I hit enter or o/O on a comment line.
-set formatoptions-=or
+set shiftround                  "When at 3 spaces and I hit >>, go to 4, not 5.
+set grepprg=ack                 "Use Ack instead of grep
+set wildmenu                    "tab completion in commands
+set wildmode=list:full
+
+highlight StatusLine ctermfg=blue
+
+" Remove trailing whitespace on save for ruby files.
+" au BufWritePre *.rb :%s/\s\+$//e "
 
 "copy to system clipboard hack
 vmap <C-x> :!pbcopy<CR>
@@ -35,7 +41,7 @@ vmap <C-c> :w !pbcopy<CR><CR>
 map <C-h> :nohl<cr>
 
 " ================ Scrolling ========================
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set scrolloff=8                 "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
