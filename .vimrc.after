@@ -29,7 +29,47 @@ set grepprg=ack                 "Use Ack instead of grep
 set wildmenu                    "tab completion in commands
 set wildmode=list:full
 
-highlight StatusLine ctermfg=blue
+abbrev flase false
+abbrev fasle false
+abbrev treu true
+abbrev shoudl should
+abbrev compnay company
+abbrev slef self
+
+highlight StatusLine ctermfg=yellow
+
+" ================ focus for rspec tests ========================
+command! ClearFocus :%s/, :focus => true//g
+map <C-f> :%s/, :focus => true//g <CR>
+map <C-b> :g/binding.pry/d<CR>:w<CR>
+map <Leader>af :Ack focus spec/<CR>
+map <Leader>f $bhha, :focus => true<esc>:w<CR>
+map <Leader>so osave_and_open_page<esc>:w<CR>
+
+map <Leader>ab :Ack binding<CR>
+
+" factory girl build
+map <Leader>fgb iFactoryGirl.build()<esc>i
+" factory girl create
+map <Leader>fgc iFactoryGirl.create()<esc>i
+" hash rocket macro
+map <Leader>h bi:<esc>ea => 
+" pry macros
+map <Leader>b obinding.pry<esc>:w<CR>
+map <Leader>B Obinding.pry<esc>:w<CR>
+" last open buffer
+map <Leader>l <esc>:buffer #<CR>
+" add single quotes
+map <Leader>' <esc>bi'<esc>ea'
+" add double quotes
+map <Leader>" <esc>bi"<esc>ea"
+" Rspec expectation
+map <Leader>ex iexpect(expectation).to eq(<esc>F(lve
+" Dash search
+map <Leader>d <esc>:Dash 
+" No help
+nmap <F1> <Esc>
+
 
 " Remove trailing whitespace on save for ruby files.
 " au BufWritePre *.rb :%s/\s\+$//e "
