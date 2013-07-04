@@ -22,6 +22,7 @@
   sts = status -s
   stb = status -sb
   ci = commit
+  cim = commit -m
   co = checkout
   cob = checkout -b
   ap = add -p
@@ -34,7 +35,10 @@
   sp = smart-pull
   sm = smart-merge
   au = add --update
+  sth = stash
+  stp = stash pop
+  br = branch
 [help]
   autocorrect = 1
 [push]
-	default = matching
+	default = tracking
