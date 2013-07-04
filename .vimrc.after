@@ -3,7 +3,7 @@ set nocompatible
 syntax enable
 set background=dark
 nnoremap <silent> <F9> :exec "color " .
-    \ ((g:colors_name == "twilight") ? "solarized" : "twilight")<CR>
+    \ ((g:colors_name == "solarized") ? "twilight" : "solarized")<CR>
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
