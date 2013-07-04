@@ -67,6 +67,9 @@ map <Leader>" <esc>bi"<esc>ea"
 map <Leader>ex iexpect(expectation).to eq(<esc>F(lve
 " Dash search
 map <Leader>d <esc>:Dash 
+" Exit insert mode when using apple s
+" must find a way to unmap this key first "
+map <D-s> <esc>:w<CR>
 " No help
 nmap <F1> <Esc>
 
