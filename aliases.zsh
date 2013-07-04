@@ -1,0 +1,1 @@
+/Users/maxbeizer/.oh-my-zsh/lib/aliases.zsh
