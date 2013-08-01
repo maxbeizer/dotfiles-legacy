@@ -2,13 +2,13 @@ set nocompatible
 
 syntax enable
 set background=dark
-nnoremap <silent> <F9> :exec "color " .
-    \ ((g:colors_name == "solarized") ? "twilight" : "solarized")<CR>
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
-colorscheme solarized
+colorscheme twilight
+nnoremap <silent> <F9> :exec "color " .
+    \ ((g:colors_name == "solarized") ? "twilight" : "solarized")<CR>
 
 let mapleader=","
 let NERDTreeShowHidden=0        "Show dot files in nerdtree automatically
@@ -21,6 +21,7 @@ set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set mouse=a
 set noswapfile
+set nowb
 set nobackup
 set pastetoggle=<F2>
 set nowrap                      "Don't wrap lines
@@ -28,15 +29,38 @@ set shiftround                  "When at 3 spaces and I hit >>, go to 4, not 5.
 set grepprg=ack                 "Use Ack instead of grep
 set wildmenu                    "tab completion in commands
 set wildmode=list:full
+set si                          "Smart indent
 
-abbrev flase false
-abbrev fasle false
-abbrev treu true
-abbrev shoudl should
-abbrev compnay company
-abbrev slef self
+iabbrev flase false
+iabbrev fasle false
+iabbrev treu true
+iabbrev shoudl should
+iabbrev compnay company
+iabbrev slef self
 
-highlight StatusLine ctermfg=yellow
+
+" ================ status line ========================
+set laststatus=2
+set statusline=\ "
+set statusline+=%1*%-25.80f%*\ " file name minimum 25, maximum 80 (right justified)
+set statusline+=%2*
+set statusline+=%h "help file flag
+set statusline+=%r "read only flag
+set statusline+=%m "modified flag
+set statusline+=%w "preview flag
+set statusline+=%*\ "
+set statusline+=%4*%{fugitive#statusline()}%*\ " Fugitive
+set statusline+=%= " right align
+set statusline+=%8*%-14.(%l,%c%V%)\ %<%P%* " offset
+
+" http://amix.dk/vim/vimrc.html
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+" Remember info about open buffers on close
+set viminfo^=%
 
 " ================ focus for rspec tests ========================
 command! ClearFocus :%s/, :focus => true//g
@@ -79,6 +103,12 @@ vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
 map <C-h> :nohl<cr>
+
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+map <leader>vs :vs <c-r>=expand("%:p:h")<cr>/
+map <leader>sp :vs <c-r>=expand("%:p:h")<cr>/
 
 " ================ Scrolling ========================
 set scrolloff=8                 "Start scrolling when we're 8 lines away from margins
