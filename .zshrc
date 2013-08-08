@@ -46,6 +46,10 @@ export EDITOR="vim"
 bindkey -v
 alias la="ls -la"
 
+#Search forward in the history for a line beginning with the current line up to the cursor. This leaves the cursor in its original position.
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+
 # vi style incremental search
 # bindkey '^R' history-incremental-search-backward
 # bindkey '^S' history-incremental-search-forward
