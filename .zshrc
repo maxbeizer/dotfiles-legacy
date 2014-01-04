@@ -41,6 +41,8 @@ source $ZSH/oh-my-zsh.sh
 # $PATH
 # # This puts homebrew packages first in path
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=${PATH}:/usr/local/mysql/bin
 
 export EDITOR="vim"
 bindkey -v

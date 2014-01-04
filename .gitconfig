@@ -38,6 +38,7 @@
   sth = stash
   stp = stash pop
   br = branch
+  unstage = reset HEAD
 [help]
   autocorrect = 1
 [push]

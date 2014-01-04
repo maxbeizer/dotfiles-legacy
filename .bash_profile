@@ -54,4 +54,3 @@ parse_git_branch () {
 }
 
 PS1="\[$GREEN\]\u\[$RESET\]@\[$GREEN\]\h\[$RESET\]:\[\033[01;33m\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \[$RESET\]on \")\[$WHITE\]\[$BOLD\]\$(parse_git_branch)\[$RESET\]\n\$ \[$RESET\]"
-

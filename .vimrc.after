@@ -54,7 +54,7 @@ set statusline+=%= " right align
 set statusline+=%8*%-14.(%l,%c%V%)\ %<%P%* " offset
 
 " http://amix.dk/vim/vimrc.html
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
@@ -92,17 +92,20 @@ map <Leader>ex iexpect(expectation).to eq(<esc>F(lve
 " Dash search
 map <Leader>d <esc>:Dash 
 " No help
-nmap <F1> <Esc>
+map <F1> <Esc>
+" Move variable to let syntax
+map <Leader>vl 0wilet(:<esc>ea)<esc>wr{A }<esc>
 
 
 " Remove trailing whitespace on save for ruby files.
-" au BufWritePre *.rb :%s/\s\+$//e "
+ au BufWritePre *.rb :%s/\s\+$//e "
 
 "copy to system clipboard hack
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
 map <C-h> :nohl<cr>
+map <C-s> <esc>:w<cr>
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
