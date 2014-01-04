@@ -11,7 +11,6 @@ nnoremap <silent> <F9> :exec "color " .
     \ ((g:colors_name == "solarized") ? "twilight" : "solarized")<CR>
 
 let mapleader=","
-let NERDTreeShowHidden=0        "Show dot files in nerdtree automatically
 set gfn=Monaco:h12
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history

@@ -32,7 +32,7 @@ ZSH_THEME="mbeizer"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx)
+plugins=(git osx gitfast)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,6 +51,9 @@ alias la="ls -la"
 #Search forward in the history for a line beginning with the current line up to the cursor. This leaves the cursor in its original position.
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
+
+#allow autocomplete with aliases
+setopt no_complete_aliases
 
 # vi style incremental search
 # bindkey '^R' history-incremental-search-backward
