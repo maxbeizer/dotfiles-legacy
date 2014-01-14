@@ -95,6 +95,9 @@ map <F1> <Esc>
 " Move variable to let syntax
 map <Leader>vl 0wilet(:<esc>ea)<esc>wr{A }<esc>
 
+map <Leader>r :w\|!rspec %<cr>
+map <Leader>rl :w\|:exe "!rspec % -l " . line('.')<cr>
+
 
 " Remove trailing whitespace on save for ruby files.
  au BufWritePre *.rb :%s/\s\+$//e "
