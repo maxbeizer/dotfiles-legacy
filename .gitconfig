@@ -39,6 +39,7 @@
   stp = stash pop
   br = branch
   unstage = reset HEAD
+  oops = commit --amend -m
 [help]
   autocorrect = 1
 [push]
