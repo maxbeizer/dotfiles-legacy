@@ -8,6 +8,11 @@ alias mortadella='ssh -fNL 6667:localhost:57001 mortadella'
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib
+export PATH=/usr/bin:$PATH
+
+source ~/.profile
+
 # colors
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
