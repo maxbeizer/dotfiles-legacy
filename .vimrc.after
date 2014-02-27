@@ -11,7 +11,7 @@ nnoremap <silent> <F9> :exec "color " .
     \ ((g:colors_name == "solarized") ? "twilight" : "solarized")<CR>
 
 let mapleader=","
-set gfn=Monaco:h12
+set gfn=Monaco:h13
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -80,8 +80,6 @@ map <Leader>h bi:<esc>ea =>
 " pry macros
 map <Leader>b obinding.pry<esc>:w<CR>
 map <Leader>B Obinding.pry<esc>:w<CR>
-" last open buffer
-map <Leader>l <esc>:buffer #<CR>
 " add single quotes
 map <Leader>' <esc>bi'<esc>ea'
 " add double quotes
@@ -108,6 +106,9 @@ vmap <C-c> :w !pbcopy<CR><CR>
 
 map <C-h> :nohl<cr>
 map <C-s> <esc>:w<cr>
+
+" Enable spellchecking for Markdown
+autocmd FileType markdown setlocal spell
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
