@@ -48,3 +48,5 @@ ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[yellow]%}D"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[yellow]%}R"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}U"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}N"
+
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
