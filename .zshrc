@@ -39,9 +39,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-eval "$(hub alias -s)"
-fpath=('/usr/local/share/zsh/site-functions' $fpath)
-
 # $PATH
 # # This puts homebrew packages first in path
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
