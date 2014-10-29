@@ -11,6 +11,8 @@ Plugin 'tpope/vim-ragtag'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Townk/vim-autoclose'
 Plugin 'othree/html5.vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -113,7 +115,7 @@ map <Leader>rl :w\|:exe "!rspec % -l " . line('.')<cr>
 
 
 " Remove trailing whitespace on save for ruby files.
-au BufWritePre *.rb :%s/\s\+$//e "
+" au BufWritePre *.rb :%s/\s\+$//e "
 
 "copy to system clipboard hack
 vmap <C-x> :!pbcopy<CR>
@@ -121,6 +123,8 @@ vmap <C-c> :w !pbcopy<CR><CR>
 
 map <C-h> :nohl<cr>
 map <C-s> <esc>:w<cr>
+
+map <leader>{ a{{}}<esc>hi 
 
 " Enable spellchecking for Markdown
 autocmd FileType markdown setlocal spell
