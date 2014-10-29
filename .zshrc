@@ -8,9 +8,16 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="mbeizer"
 
 # Example aliases
-alias zshrc="mvim ~/.zshrc"
+alias zshrc="mvim ~/dotfiles/.zshrc"
 alias vimrc="mvim ~/.vimrc.after"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias la="ls -la"
+alias h="heroku"
+alias rs="rails server"
+alias rc="rails console"
+alias rss="rspec spec"
+alias dcm="rake db:drop db:create db:migrate"
+alias be="bundle exec"
+alias ta="tmux attach"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -33,7 +40,7 @@ alias vimrc="mvim ~/.vimrc.after"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx github safe-paste last-working-dir)
+plugins=(git osx github history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,17 +54,12 @@ export PATH=${PATH}:/usr/local/mysql/bin
 
 export EDITOR="vim"
 bindkey -v
-alias la="ls -la"
 
-#Search forward in the history for a line beginning with the current line up to the cursor. This leaves the cursor in its original position.
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
+#use the history substring search plugin to search history for given substring (and allow pasting)
+bindkey '\eOA' history-substring-search-up
+bindkey '\eOB' history-substring-search-down
 
 #allow autocomplete with aliases
 setopt no_complete_aliases
 
-# vi style incremental search
-# bindkey '^R' history-incremental-search-backward
-# bindkey '^S' history-incremental-search-forward
-# bindkey '^P' history-search-backward
-# bindkey '^N' history-search-forward
+export ANDROID_HOME=/Users/maxbeizer/adt-bundle-mac-x86_64-20140702/sdk/
