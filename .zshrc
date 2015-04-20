@@ -16,8 +16,13 @@ alias rs="rails server"
 alias rc="rails console"
 alias rss="rspec spec"
 alias dcm="rake db:drop db:create db:migrate"
+alias dmp="rake db:migrate db:test:prepare"
+alias dm="rake db:migrate"
+alias dmr="rake db:migrate:redo"
+alias dtp="rake db:test:prepare"
 alias be="bundle exec"
 alias ta="tmux attach"
+alias rgm='rails g migration'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

@@ -33,6 +33,7 @@
   undo = reset --soft HEAD^
   count = shortlog -sn
   mg = merge --no-ff --log
+  mgff = merge --ff-only
   sp = smart-pull
   sm = smart-merge
   au = add --update
@@ -41,6 +42,9 @@
   br = branch
   unstage = reset HEAD
   oops = commit --amend -m
+  cp = cherry-pick
+  sync = "!f() { echo Syncing with master && git checkout master && git pull && git checkout - && git rebase master; }; f"
+  up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
 
   ; Get a summary of yesterday commits. Useful for Scrum standup.
   standup  = "!git log --since yesterday --author `git config user.email` --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -56,3 +60,9 @@
 	user = maxbeizer
 [rerere]
 	enabled = true
+[credential]
+	helper = osxkeychain
+;[merge]
+	;tool = vimdiff
+[mergetool]
+	keepBackup = false
